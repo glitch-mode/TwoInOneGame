@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TwoInOneGame</string>
+    <string name="tic_tac_toe">Tic-Tac-Toe</string>
+    <string name="_4_in_a_row">4 In a Row</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_choose_a_game">Welcome. Choose A Game!</string>
+    <string name="score_text_view">Score:</string>
+    <string name="blue">Blue: </string>
+    <string name="red">Red: </string>
+</resources>
