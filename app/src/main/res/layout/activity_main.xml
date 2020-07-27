@@ -13,21 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@mipmap/tic_tac_toe_foreground"
         android:layout_margin="4dp"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/button_tic_tac_toe"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@mipmap/tic_tac_toe"
+            android:background="@mipmap/tic_tac_toe_round"
             android:text="@string/tic_tac_toe"/>
 
         <Button
+            android:id="@+id/button_four_in_a_row"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@mipmap/four_in_a_row_2"
+            android:background="@mipmap/four_in_a_row_2_round"
             android:layout_weight="1"
             android:text="@string/_4_in_a_row"/>
 

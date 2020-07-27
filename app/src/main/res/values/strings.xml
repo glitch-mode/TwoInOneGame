@@ -8,4 +8,6 @@
     <string name="score_text_view">Score:</string>
     <string name="blue">Blue: </string>
     <string name="red">Red: </string>
+    <string name="red_s_turn">Red\'s Turn</string>
+    <string name="blue_s_turn">Blue\'s Turn</string>
 </resources>

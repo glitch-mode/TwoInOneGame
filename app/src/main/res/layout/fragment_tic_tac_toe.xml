@@ -65,13 +65,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="32dp">
 
         <TextView
             android:id="@+id/blue_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
             android:layout_toEndOf="@id/blue_text"
             android:textColor="@color/blue"
             android:textSize="32sp"
@@ -81,9 +81,7 @@
             android:id="@+id/red_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="64dp"
-            android:layout_toEndOf="@+id/blue_score"
+            android:layout_toStartOf="@+id/red_score"
             android:text="@string/red"
             android:textColor="@color/red"
             android:textSize="32sp" />
@@ -92,8 +90,7 @@
             android:id="@+id/red_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:layout_toEndOf="@id/red_text"
+            android:layout_alignParentEnd="true"
             android:textColor="@color/red"
             android:textSize="32sp"
             tools:text="10" />
@@ -103,8 +100,7 @@
             android:id="@+id/blue_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="64dp"
+            android:layout_alignParentStart="true"
             android:text="@string/blue"
             android:textColor="@color/blue"
             android:textSize="32sp" />

@@ -10,36 +10,40 @@
         android:layout_gravity="center"
         android:background="@mipmap/four_in_a_row_2_foreground"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <LinearLayout style="@style/linears">
+        <LinearLayout
+            style="@style/linears"
+            android:id="@+id/column_1">
 
             <Button
                 android:id="@+id/r1c1"
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r1c2"
+                android:id="@+id/r2c1"
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r1c3"
+                android:id="@+id/r3c1"
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r1c4"
+                android:id="@+id/r4c1"
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r1c5"
+                android:id="@+id/r5c1"
                 style="@style/buttons" />
 
         </LinearLayout>
 
-        <LinearLayout style="@style/linears">
+        <LinearLayout
+            style="@style/linears"
+            android:id="@+id/column_2">
 
             <Button
-                android:id="@+id/r2c1"
+                android:id="@+id/r1c2"
                 style="@style/buttons" />
 
             <Button
@@ -47,47 +51,7 @@
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r2c3"
-                style="@style/buttons" />
-
-            <Button
-                android:id="@+id/r2c4"
-                style="@style/buttons" />
-
-            <Button
-                android:id="@+id/r2c5"
-                style="@style/buttons" />
-
-        </LinearLayout>
-
-        <LinearLayout style="@style/linears">
-
-            <Button
-                android:id="@+id/r3c1"
-                style="@style/buttons" />
-
-            <Button
                 android:id="@+id/r3c2"
-                style="@style/buttons" />
-
-            <Button
-                android:id="@+id/r3c3"
-                style="@style/buttons" />
-
-            <Button
-                android:id="@+id/r3c4"
-                style="@style/buttons" />
-
-            <Button
-                android:id="@+id/r3c5"
-                style="@style/buttons" />
-
-        </LinearLayout>
-
-        <LinearLayout style="@style/linears">
-
-            <Button
-                android:id="@+id/r4c1"
                 style="@style/buttons" />
 
             <Button
@@ -95,7 +59,47 @@
                 style="@style/buttons" />
 
             <Button
+                android:id="@+id/r5c2"
+                style="@style/buttons" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linears" android:id="@+id/column_3">
+
+            <Button
+                android:id="@+id/r1c3"
+                style="@style/buttons" />
+
+            <Button
+                android:id="@+id/r2c3"
+                style="@style/buttons" />
+
+            <Button
+                android:id="@+id/r3c3"
+                style="@style/buttons" />
+
+            <Button
                 android:id="@+id/r4c3"
+                style="@style/buttons" />
+
+            <Button
+                android:id="@+id/r5c3"
+                style="@style/buttons" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linears" android:id="@+id/column_4">
+
+            <Button
+                android:id="@+id/r1c4"
+                style="@style/buttons" />
+
+            <Button
+                android:id="@+id/r2c4"
+                style="@style/buttons" />
+
+            <Button
+                android:id="@+id/r3c4"
                 style="@style/buttons" />
 
             <Button
@@ -103,27 +107,27 @@
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r4c5"
+                android:id="@+id/r5c4"
                 style="@style/buttons" />
 
         </LinearLayout>
 
-        <LinearLayout style="@style/linears">
+        <LinearLayout style="@style/linears" android:id="@+id/column_5">
 
             <Button
-                android:id="@+id/r5c1"
+                android:id="@+id/r1c5"
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r5c2"
+                android:id="@+id/r2c5"
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r5c3"
+                android:id="@+id/r3c5"
                 style="@style/buttons" />
 
             <Button
-                android:id="@+id/r5c4"
+                android:id="@+id/r4c5"
                 style="@style/buttons" />
 
             <Button
@@ -135,46 +139,61 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/blue_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_toEndOf="@id/blue_text"
-        android:textColor="@color/blue"
-        android:textSize="32sp"
-        tools:text="10" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="50dp">
 
-    <TextView
-        android:id="@+id/red_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:layout_toEndOf="@+id/blue_score"
-        android:text="@string/red"
-        android:textColor="@color/red"
-        android:textSize="32sp" />
+        <TextView
+            android:id="@+id/blue_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/blue_text"
+            android:textColor="@color/blue"
+            android:textSize="32sp"
+            tools:text="10" />
 
-    <TextView
-        android:id="@+id/red_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_toEndOf="@id/red_text"
-        android:textColor="@color/red"
-        android:textSize="32sp"
-        tools:text="10" />
+        <TextView
+            android:id="@+id/red_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/red_score"
+            android:text="@string/red"
+            android:textColor="@color/red"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/red_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/red"
+            android:textSize="32sp"
+            tools:text="10" />
 
 
-    <TextView
-        android:id="@+id/blue_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:text="@string/blue"
-        android:textColor="@color/blue"
-        android:textSize="32sp" />
+        <TextView
+            android:id="@+id/blue_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/blue"
+            android:textColor="@color/blue"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/text_view_turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="32sp"
+            android:layout_margin="16dp"
+            android:textStyle="bold"
+            tools:text="hiiiiiiiiiiiiiii"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
