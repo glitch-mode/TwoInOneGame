@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +30,7 @@ public class FourInARow extends Fragment {
     private Button[][] mRC;
     private LinearLayout[] mColumn;
     private View view;
-    private int r, c;
+    private int r, c, mIntBlueScore = 0, mIntRedScore = 0;
     private Player[][] mPlayers;
     private Player mTurn;
 
@@ -98,26 +99,40 @@ public class FourInARow extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void checkWinner() {
         int win = 0, win2 = 0;
+        boolean isCompleted = true;
         for (int i = 0; i < 5; i++) {
+            if (mPlayers[0][i] == Player.EMPTY) isCompleted = false;
             if (mPlayers[r][i] == mTurn) {
                 win++;
             } else win = 0;
             if (mPlayers[i][c] == mTurn) {
                 win2++;
             } else win2 = 0;
+
             if (win == 4 || win2 == 4) {
                 String s = mTurn.toString() + " has won!";
-                Snackbar.make(Objects.requireNonNull(getView()), s, BaseTransientBottomBar.LENGTH_LONG).show();
-                final Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
+                Snackbar.make(Objects.requireNonNull(getView()), s, Snackbar.LENGTH_LONG).show();
+                if (mTurn == Player.BLUE) mIntBlueScore++;
+                else mIntRedScore++;
+                for (int k = 0; k < 5; k++) {
+                    mColumn[k].setClickable(false);
+                }
+                new CountDownTimer(5000, 1000) {
                     @Override
-                    public void run() {
-                        reset();
-                        handler.postDelayed(this, 5000);
-                    }
-                }, 1500);
+                    public void onTick(long millisUntilFinished) {
 
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        reset();
+                    }
+                }.start();
             }
+        }
+        if (isCompleted) {
+            Toast.makeText(getActivity(), "Nobody won :( ", Toast.LENGTH_LONG).show();
+            reset();
         }
         if (mTurn == Player.BLUE) {
             mTurn = Player.RED;
@@ -126,6 +141,8 @@ public class FourInARow extends Fragment {
             mTurn = Player.BLUE;
             mTextViewTurn.setText(R.string.blue_s_turn);
         }
+        mBlueScore.setText(String.valueOf(mIntBlueScore));
+        mRedScore.setText(String.valueOf(mIntRedScore));
     }
 
     public void setOnClickListeners() {
@@ -167,6 +184,7 @@ public class FourInARow extends Fragment {
                 mPlayers[i][j] = Player.EMPTY;
                 mRC[i][j].setBackgroundResource(R.drawable.rounded_button);
             }
+            mColumn[i].setClickable(true);
         }
     }
 }

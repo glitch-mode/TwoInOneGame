@@ -10,4 +10,5 @@
     <string name="red">Red: </string>
     <string name="red_s_turn">Red\'s Turn</string>
     <string name="blue_s_turn">Blue\'s Turn</string>
+    <string name="reset">RESET</string>
 </resources>
