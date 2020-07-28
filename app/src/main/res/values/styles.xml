@@ -14,10 +14,23 @@
         <item name="android:background">@drawable/rounded_button</item>
     </style>
 
+    <style name="ttt_buttons" parent="AppTheme">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:background">@drawable/ttt_button</item>
+    </style>
+
     <style name="linears" parent="AppTheme">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:clickable">true</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="ttt_linears" parent="AppTheme">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:orientation">vertical</item>
     </style>
 

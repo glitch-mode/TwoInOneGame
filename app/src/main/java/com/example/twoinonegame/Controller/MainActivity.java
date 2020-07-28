@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mButtonTicTacToe, mButtonFourInARow;
     private FragmentManager fragmentManager;
+    private boolean isFirst = true;
     private Fragment mFragmentCurrent;
 
     @Override
@@ -23,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Fragment fragment = new Fragment();
         fragmentManager = getSupportFragmentManager();
+
+        if (fragmentManager.findFragmentById(R.id.container_game) == null && !isFirst)
+            makeFragment();
 
         mButtonFourInARow = findViewById(R.id.button_four_in_a_row);
         mButtonTicTacToe = findViewById(R.id.button_tic_tac_toe);
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void makeFragment() {
+        isFirst = false;
         fragmentManager
                 .beginTransaction()
                 .add(R.id.container_game, mFragmentCurrent)

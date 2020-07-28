@@ -1,5 +1,7 @@
 package com.example.twoinonegame.Model;
 
-public enum Player {
+import java.io.Serializable;
+
+public enum Player implements Serializable {
     RED,BLUE,EMPTY
 }
